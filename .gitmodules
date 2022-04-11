@@ -1,0 +1,3 @@
+[submodule "Source/ThirdParty/optick"]
+	path = Source/ThirdParty/optick
+	url = https://github.com/bombomby/optick.git
