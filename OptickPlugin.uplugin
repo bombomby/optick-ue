@@ -10,7 +10,6 @@
 	"DocsURL": "https://github.com/bombomby/optick/wiki/UE4-Optick-Plugin",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/1.3.3fa1.3.3fd1.3.3f",
 	"SupportURL": "https://github.com/bombomby/optick/issues",
-	"EngineVersion": "5.0.0",
 	"CanContainContent": false,
 	"IsBetaVersion": false,
 	"Installed": true,
