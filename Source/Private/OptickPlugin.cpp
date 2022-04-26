@@ -282,14 +282,14 @@ void FOptickPlugin::ShutdownModule()
 	// Stop capture if needed
 	StopCapture();
 
-#if WITH_EDITOR
-	if (GIsEditor)
+#if WITH_EDITOR	
+if (GIsEditor)
 	{
-		// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-		// we call this function before unloading the module.
-		FOptickStyle::Shutdown();
+	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
+	// we call this function before unloading the module.
+	FOptickStyle::Shutdown();
 
-		FOptickCommands::Unregister();
+	FOptickCommands::Unregister();
 	}
 #endif
 
@@ -408,7 +408,7 @@ bool FOptickPlugin::UpdateCalibrationTimestamp(FRealtimeGPUProfilerFrameImpl* Fr
 
 	if (Frame->TimestampCalibrationQuery.IsValid())
 	{
-#if UE_4_27_OR_LATER
+#ifdef UE_4_27_OR_LATER
 		CalibrationTimestamp.GPUMicroseconds = Frame->TimestampCalibrationQuery->GPUMicroseconds[GPUIndex];
 		CalibrationTimestamp.CPUMicroseconds = Frame->TimestampCalibrationQuery->CPUMicroseconds[GPUIndex];
 #else

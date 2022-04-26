@@ -10,7 +10,11 @@
 #include "ProfilingDebugging/TracingProfiler.h"
 #include "Runtime/Launch/Resources/Version.h"
 
-#define UE_4_27_OR_LATER (ENGINE_MAJOR_VERSION >= 4 && ENGINE_MINOR_VERSION >= 27)
+#if ENGINE_MAJOR_VERSION > 4
+#define UE_4_27_OR_LATER
+#elif (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 27)
+#define UE_4_27_OR_LATER
+#endif
 
 
 #define REALTIME_GPU_PROFILER_EVENT_TRACK_FRAME_NUMBER (TRACING_PROFILER || DO_CHECK)
@@ -175,6 +179,6 @@ public:
 	bool bInBeginEndBlock;
 };
 
-static_assert(sizeof(FRealtimeGPUProfilerImpl) == sizeof(FRealtimeGPUProfiler), "Size mismatch");
+//static_assert(sizeof(FRealtimeGPUProfilerImpl) == sizeof(FRealtimeGPUProfiler), "Size mismatch");
 
 #endif //OPTICK_UE4_GPU
