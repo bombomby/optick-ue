@@ -283,13 +283,13 @@ void FOptickPlugin::ShutdownModule()
 	StopCapture();
 
 #if WITH_EDITOR	
-if (GIsEditor)
+	if (GIsEditor)
 	{
-	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-	// we call this function before unloading the module.
-	FOptickStyle::Shutdown();
+		// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
+		// we call this function before unloading the module.
+		FOptickStyle::Shutdown();
 
-	FOptickCommands::Unregister();
+		FOptickCommands::Unregister();
 	}
 #endif
 
